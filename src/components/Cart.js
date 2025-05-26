@@ -43,7 +43,7 @@ function handleDecrement(id){
   return (
     <div id='main' >
       <p id='cart-total-amount' >Total Price:{totalPrice}</p>
-      <button id='clear-all-cart' onClick={()=>{setCart([])}} >Clear Cart</button>
+      <button id='clear-all-cart' onClick={()=>{setCart([]);setData([])}} >Clear Cart</button>
       <div id='cart-items-list' >
       {
         data.map(product=>(
