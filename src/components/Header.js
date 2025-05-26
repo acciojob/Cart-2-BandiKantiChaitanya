@@ -7,6 +7,7 @@ function Header() {
     <div>
       <nav>
         <h1>Shopping App</h1>
+        <p>useReducer</p> 
         <p id='nav-cart-item-count' >{cart.length}</p>
       </nav>
     </div>

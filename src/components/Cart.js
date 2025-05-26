@@ -41,12 +41,12 @@ function handleDecrement(id){
   })
 }
   return (
-    <div>
+    <div id='main' >
       <p id='cart-total-amount' >Total Price:{totalPrice}</p>
       <button id='clear-all-cart' onClick={()=>{setCart([])}} >Clear Cart</button>
       {
         data.map(product=>(
-          <div className="card" key={product.id} >
+          <div className="card" key={product.id} id='cart-items-list' >
             <img src={product.image} alt={product.title} />
             <div className="cardContent">
               <h4>{product.title}</h4>
@@ -58,8 +58,14 @@ function handleDecrement(id){
               <button onClick={()=>{handleIncrement(product.id)}} id='increment-btn-id' >+</button>
               <button onClick={()=>{handleDecrement(product.id)}} id='decrement-btn-id' >-</button>
               </div>
-              <p id='cart-amount-id' >Amount:{(cart.find(item => item.id === product.id)?.quantity*product.price || 0)}</p>
-              
+              <p id='cart-amount-id' >{(cart.find(item => item.id === product.id)?.quantity || 0)}</p>
+              {/* <p id='cart-amount-id' >Amount:{(cart.find(item => item.id === product.id)?.quantity*product.price || 0)}</p> */}
+              <button
+                id={`cart-item-remove-${product.id}`}
+                onClick={() => setCart(prev => prev.filter(item => item.id !== product.id))}
+              >
+                Remove
+              </button>
             </div>
             
           </div>
