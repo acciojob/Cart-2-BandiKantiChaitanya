@@ -44,9 +44,10 @@ function handleDecrement(id){
     <div id='main' >
       <p id='cart-total-amount' >Total Price:{totalPrice}</p>
       <button id='clear-all-cart' onClick={()=>{setCart([])}} >Clear Cart</button>
+      <div id='cart-items-list' >
       {
         data.map(product=>(
-          <div className="card" key={product.id} id='cart-items-list' >
+          <div className="card" key={product.id}  >
             <img src={product.image} alt={product.title} />
             <div className="cardContent">
               <h4>{product.title}</h4>
@@ -71,6 +72,7 @@ function handleDecrement(id){
           </div>
         ))
       }
+      </div>
     </div>
   )
 }
