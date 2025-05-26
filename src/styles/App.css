@@ -10,3 +10,19 @@ button{
     justify-content: center;
     align-items: center;
 }
+.card img{
+    height: auto;
+    width: 200px;
+}
+.card{
+    display: flex;
+    gap: 200px;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.button-row{
+    display: flex;
+}
